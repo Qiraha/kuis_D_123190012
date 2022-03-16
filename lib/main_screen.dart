@@ -26,7 +26,7 @@ class MainScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   _AppIcon(place.imageLogo),
-                  _MiniDetail(place.name, place.genre, place.rating),
+                  _MiniDetail(place.name, place.genre, place.rating, place.developer),
                 ],
               ),
             ),
@@ -46,7 +46,7 @@ class MainScreen extends StatelessWidget {
     );
   }
 
-  Widget _MiniDetail(String Name, Genre, Rating){
+  Widget _MiniDetail(String Name, Genre, Rating, Developer){
     return Expanded(
       flex: 2,
       child: Padding(
