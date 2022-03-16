@@ -24,34 +24,9 @@ class MainScreen extends StatelessWidget {
               },
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  _AppList(place.imageLogo),
-                  Expanded(
-                    flex: 2,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            place.name,
-                            style: TextStyle(fontSize: 16.0),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(place.developer),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                              place.genre+" - "+place.rating,
-                              style: TextStyle(fontSize: 10.0),
-                          )
-                        ],
-                      ),
-                    ),
-                  )
+                children: [
+                  _AppIcon(place.imageLogo),
+                  _MiniDetail(place.name, place.genre, place.rating),
                 ],
               ),
             ),
@@ -60,13 +35,42 @@ class MainScreen extends StatelessWidget {
       ),
     );
   }
-  Widget _AppList(String imageLogo){
+  Widget _AppIcon(String imageLogo){
     return Container(
       width: 50.0,
       height: 50.0,
       child: Expanded(
         flex: 1,
         child: Image.asset(imageLogo),
+      ),
+    );
+  }
+
+  Widget _MiniDetail(String Name, Genre, Rating){
+    return Expanded(
+      flex: 2,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              Name,
+              style: TextStyle(fontSize: 16.0),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(place.developer),
+            SizedBox(
+              height: 5,
+            ),
+            Text(
+              Genre+" - "+Rating,
+              style: TextStyle(fontSize: 10.0),
+            )
+          ],
+        ),
       ),
     );
   }
