@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kuis_tpm/model/app_details.dart';
-// import 'package:url_launcher/url_launcher.dart';
+import 'dart:html' as html;
 
 class DetailScreen extends StatelessWidget {
   final infoTextStyle = TextStyle(fontFamily: "Oxygen");
@@ -60,7 +60,7 @@ class DetailScreen extends StatelessWidget {
                   children: <Widget>[
                     Column(
                       children: <Widget>[
-                        Icon(Icons.calendar_today),
+                        Icon(Icons.adb),
                         SizedBox(height: 8.0),
                         Text(
                           place.developer,
@@ -115,8 +115,13 @@ class DetailScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                child: Column(
-
+                width: 300.0,
+                child: Center(
+                  child: Column(
+                    children: [
+                      _downloadButton(),
+                    ],
+                  ),
                 ),
               )
             ],
@@ -125,28 +130,22 @@ class DetailScreen extends StatelessWidget {
       ),
     );
   }
-  Widget _downloadButton(BuildContext context){
+  Widget _downloadButton(){
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       width: 200.0,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: Colors.blue,
+          primary: Colors.green,
         ),
-        onPressed:(){}, child: const Text('Download'),
+        onPressed:(){
+          html.window.open(place.appLink, 'new tab');
+        }, child: const Text('Download'),
       ),
 
     );
   }
 
-  // _launchURL() async {
-  //   String url = place.appLink;
-  //   if (await canLaunch(url)) {
-  //     await launch(url);
-  //   } else {
-  //     throw 'Could not launch $url';
-  //   }
-  // }
 }
 
 class FavoriteButton extends StatefulWidget {
