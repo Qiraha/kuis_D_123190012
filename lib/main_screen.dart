@@ -61,7 +61,7 @@ class MainScreen extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Text(place.developer),
+            Text(Developer),
             SizedBox(
               height: 5,
             ),
