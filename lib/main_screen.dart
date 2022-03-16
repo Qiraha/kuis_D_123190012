@@ -4,6 +4,7 @@ import 'detail_screen.dart';
 import 'model/app_details.dart';
 
 class MainScreen extends StatelessWidget {
+  AppStore place = appList[1];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,14 +25,7 @@ class MainScreen extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Container(
-                    width: 50.0,
-                    height: 50.0,
-                    child: Expanded(
-                      flex: 1,
-                      child: Image.asset(place.imageLogo),
-                    ),
-                  ),
+                  _AppList(place.imageLogo),
                   Expanded(
                     flex: 2,
                     child: Padding(
@@ -47,6 +41,13 @@ class MainScreen extends StatelessWidget {
                             height: 10,
                           ),
                           Text(place.developer),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                              place.genre+" - "+place.rating,
+                              style: TextStyle(fontSize: 10.0),
+                          )
                         ],
                       ),
                     ),
@@ -56,6 +57,16 @@ class MainScreen extends StatelessWidget {
             ),
           );
         },
+      ),
+    );
+  }
+  Widget _AppList(String imageLogo){
+    return Container(
+      width: 50.0,
+      height: 50.0,
+      child: Expanded(
+        flex: 1,
+        child: Image.asset(imageLogo),
       ),
     );
   }

@@ -70,7 +70,7 @@ class DetailScreen extends StatelessWidget {
                     ),
                     Column(
                       children: <Widget>[
-                        Icon(Icons.access_time),
+                        Icon(Icons.music_note),
                         SizedBox(height: 8.0),
                         Text(
                           place.genre,
@@ -80,7 +80,7 @@ class DetailScreen extends StatelessWidget {
                     ),
                     Column(
                       children: <Widget>[
-                        Icon(Icons.monetization_on),
+                        Icon(Icons.star_border),
                         SizedBox(height: 8.0),
                         Text(
                           place.rating,
