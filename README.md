@@ -1,6 +1,8 @@
 # kuis_tpm
 
-A new Flutter project.
+Afifrendra Rifqi Nugraha
+
+123190012
 
 ## Getting Started
 
